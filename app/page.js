@@ -2,6 +2,10 @@ import Items from "./components/Items";
   import Online from "./components/Online";
 import Opening from "./components/Opening";
   import Link from "next/link";
+  import Chef from "./components/Chef";
+  import Blog from "./components/Blog";
+  import Footer from "./components/Footer";
+  
 export default function hotel(){
   
   const food = [
@@ -52,10 +56,11 @@ export default function hotel(){
 
     ]
   return (
-   <div className="relative bg-contain bg-center h-[500px]  md:h-[800px] w-full " style={{
+   <div className="relative bg-contain bg-center h-[500px]  md:h-[800px] " style={{
       backgroundImage: "url('images/banner.jpg')"
     }}>
    
+        
         
     
     <div className=" flex items-center px-5 mx-5 space-x-4 pt-3">
@@ -87,17 +92,20 @@ export default function hotel(){
         </div>
         <div className="flex ml-[700px] space-x-5">
          <select className="hidden md:block text-lg font-semibold text-white border-black-1 ">
-        <option>Shop</option>
-        <option className="text-gray-400">Shop single</option>
-        <option className="text-gray-400">Shop single two</option>
-        <option className="text-gray-400">Cart</option>
+        <option className="text-black bg-none">Shop</option>
+        <option className="text-black bg-none">Shop single</option>
+        <option  className="text-black bg-none">Shop single two</option>
+        <option className="text-black bg-none">Cart</option>
         </select>
-        <select className="hidden md:block text-lg font-semibold text-white border-black-1 ">
-        <option>Contact us</option>
-        </select>
-         <select className="hidden md:block text-lg font-semibold text-white border-black-1">
-        <option>Blog</option>
-      </select>
+        
+        <Link href="/contact">
+         <button className="hidden md:block text-lg font-semibold text-white border-black-1 ">Contact us</button></Link>
+        
+        <Link href="/blog">
+         <button className="hidden md:block text-lg font-semibold text-white border-black-1 ">Blog</button></Link>
+         
+        
+      
       </div>
     </div>
     <div className=" text-4xl md:text-8xl text-white font-semibold flex items-center justify-center  mt-[150px] md:mt-[200px] ">
@@ -118,13 +126,13 @@ export default function hotel(){
 
     
     <div className="flex md:space-x-[500px]  ">
-    <div className=" flex flex-col h-[450px] w-350 md:w-[400px] border-2 border-gray-300 bg-white text-black pb-[50px] space-y-5 p-2 mt-[100px] md:mt-2.5 rounded-4xl ml-5 md:ml-15">
+    <div className=" flex flex-col h-[450px] w-350 md:w-[400px] border-2 border-gray-300 bg-white text-black pb-[50px] space-y-5 p-2 mt-[100px] md:mt-2.5 rounded-4xl ml-1 md:ml-15">
       <div className=" text-black text-3xl font-semibold">
         <h2 className="mt-9 flex items-center justify-center">Book a table</h2>
       </div>
       <input className="text-black border-2 border-gray-300 rounded-3xl p-2 mt-2" placeholder="Name" type="text"></input>
       <select className="text-black border-2 border-gray-300 rounded-3xl p-2">
-        <option>1 person</option>
+        <option >1 person</option>
         <option>2 person</option>
         <option>3 person</option>
         <option>4 person</option>
@@ -143,9 +151,9 @@ export default function hotel(){
       <button className="bg-amber-500 text-black border-2 border-gray-300 rounded-3xl p-2 mt-3 hover:bg-black hover:text-white">Book now!</button>
     </div>
     <div >
-      <h2 className=" text-5xl dark:text-white text-black font-semibold absolute top-[800px] md:mt-5 mt-[200px] ml-[-350px]  ">Our popular category </h2>
+      <h2 className=" text-5xl dark:text-white text-black font-semibold absolute top-[800px] md:mt-5 mt-[200px] ml-[-300px]  ">Our popular category </h2>
     </div>
-    <div className="flex absolute md:top-[900px] top-[1100px] ml-[10px] md:ml-[700px]  ">
+    <div className=" md:flex  md:flex absolute md:top-[900px] top-[1100px] ml-[2px] md:ml-[700px]  ">
       {
         food.map(food=>(
           <div key={food.id}>
@@ -156,7 +164,7 @@ export default function hotel(){
       }
     </div>
   </div>
-     <div className="flex flex-col  md:flex-row  mt-[500px] md:mt-[100px] space-y-20 md:space-x-60 pl-8  ">
+     <div className="flex flex-col  md:flex-row  mt-[500px] md:mt-[100px] space-y-20 md:space-x-60 pl-8 ml-10  ">
             {
                 service.map(service=>(
                     <div key={service.id}>
@@ -180,19 +188,13 @@ export default function hotel(){
           
         </div>
         <button className="md:ml-[750px] ml-[30px]  absolute mt-[-140px]  md:top-[1950px] border-2 border-gray-300 p-3 hover:bg-black hover:text-white rounded-3xl bg-amber-700">Order today</button>
-        <div>
-          <p className="text-amber-800 text-center mt-5 text-3xl">Food Menu</p>
-          <p className="text-5xl font-semibold text-center mt-1.5">Our Specials Menu</p>
-          <div className="h-[80px] w-[200px] md:w-[700px] border-2 border-black flex items-center justify-center text-3xl ml-[120px] md:ml-[450px] rounded-xl mt-3 p-2.5">
-            <a className="md:pl-5">Beverages</a>
-            <a className="hidden md:block pl-5">Main dishes</a>
-            <a className=" hidden md:block pl-5">Deserts</a>
-            <a className="hidden md:block pl-5">Sea food</a>
-          </div>
-        </div>
+        
         <Items />
         <Online />
         <Opening /> 
+        <Chef />
+       <Blog />
+       <Footer />
     </div>
    
   );

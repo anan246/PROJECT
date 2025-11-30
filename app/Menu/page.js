@@ -1,3 +1,5 @@
+import Blog from "../components/Blog";
+import Footer from "../components/Footer";
 export default function menu(){
   const menu =[
     {
@@ -89,7 +91,7 @@ export default function menu(){
         </div>
      </div>
      <div className="flex md:flex-row flex-col space-x-[-20px] ">
-      <div className="h-[600px] w-full  md:w-[500px] mt-[50px] md:ml-[70px] dark:border border-white ml-[50px]">
+      <div className="h-[600px] w-full  md:w-[500px] mt-[50px] md:ml-[70px] dark:border border-white ">
         <img src="https://www.1mg.com/articles/wp-content/uploads/2025/08/731.jpg"></img>
       </div>
       <div className="md:ml-[100px] ">
@@ -106,7 +108,7 @@ export default function menu(){
                 <h2 className="flex-col">{menu.title}</h2>
                 <h2>{menu.p}</h2>
                 </div>
-                <div className="text-3xl mt-4 ml-[50px] flex flex-col text-yellow-800">
+                <div className="text-3xl mt-4 ml-[50px] flex flex-col text-yellow-800 ">
                   <h2>{menu.rate}</h2>
               </div>
               </div>
@@ -125,6 +127,8 @@ export default function menu(){
         <img  className="hidden md:block h-[500px] mt-5 "  src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F11.png&w=1920&q=75"></img>
       </div>
      </div>
+     <Blog />
+     <Footer />
     </div>
   );
 }

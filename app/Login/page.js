@@ -1,3 +1,5 @@
+import Blog from "../components/Blog";
+import Footer from "../components/Footer";
 export default function Login(){
     return(
     <div className="relative">
@@ -88,8 +90,8 @@ export default function Login(){
           
         </div>
       </div>
-      
-      
+      <Blog />
+      <Footer />
       </div>
     );
 }

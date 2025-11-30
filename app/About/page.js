@@ -1,4 +1,5 @@
-
+import Blog from "../components/Blog";
+import Footer from "../components/Footer";
 export default function(){
   return(
    <div className="relative">
@@ -63,7 +64,7 @@ export default function(){
       <hr className="border-2 border-white mt-2"></hr>
       <div className="relative bg-yellow-200 h-[400px] md:h-[500px] w-full">
         <div className="text-yellow-700 text-3xl text-center pt-7">----OUR TRUSTED 8K HAPPY PARTNER----</div>
-        <div className="h-[150px] w-[300px] md:h-[200px] md:w-[1400px] md:ml-[60px] ml-15 mt-[50px] md:mt-[100px] md:bg-contain" style={{
+        <div className="h-[150px] w-[300px] md:h-[200px] md:w-[1400px] md:ml-[60px] ml-3 mt-[50px] md:mt-[100px] md:bg-contain" style={{
           backgroundImage:"url('images/hotel.png')"
         }}></div>
       </div>
@@ -80,6 +81,8 @@ export default function(){
                <button className="border-2 border-white p-5 bg-amber-800 text-white hover:bg-black ml-[50px] mt-8">Discover more</button>
         </div>
       </div>
+      <Blog />
+      <Footer />
    </div>
   );
 }
